@@ -1,6 +1,6 @@
 resource "aws_docdb_cluster" "main" {
   cluster_identifier      = "${local.TAG_PREFIX}-docdb"
-  engine                  = var.ENGINE
+  //engine                  = var.ENGINE
   engine_version          = var.ENGINE_VERSION
   master_username         = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_USER"]
   master_password         = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_PASS"]
